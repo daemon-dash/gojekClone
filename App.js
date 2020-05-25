@@ -6,109 +6,115 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.body}>
+          <View style={styles.search}>
+            <View style={styles.inputContainer}>
+              <TextInput
+                style={styles.input}
+                placeholder="What do you want to eat?"
+              />
+              <Image
+                style={styles.searchIcon}
+                source={require('./icon/search.png')}
+              />
             </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+            <View></View>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+        </View>
+        <View style={styles.bottomNav}>
+          <View style={styles.navBtn}>
+            <Image
+              style={styles.image}
+              source={require('./icon/home-active.png')}
+            />
+            <Text style={styles.btnTxt}>Home</Text>
+          </View>
+          <View style={styles.navBtn}>
+            <Image style={styles.image} source={require('./icon/order.png')} />
+            <Text style={styles.btnTxt}>Orders</Text>
+          </View>
+          <View style={styles.navBtn}>
+            <Image style={styles.image} source={require('./icon/help.png')} />
+            <Text style={styles.btnTxt}>Help</Text>
+          </View>
+          <View style={styles.navBtn}>
+            <Image style={styles.image} source={require('./icon/inbox.png')} />
+            <Text style={styles.btnTxt}>Inbox</Text>
+          </View>
+          <View style={styles.navBtn}>
+            <Image
+              style={styles.image}
+              source={require('./icon/account.png')}
+            />
+            <Text style={styles.btnTxt}>Account</Text>
+          </View>
+        </View>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  container: {
+    flex: 1,
   },
   body: {
-    backgroundColor: Colors.white,
+    flex: 1,
+    backgroundColor: '#0000FF',
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  bottomNav: {
+    height: 90,
+    flexDirection: 'row',
+    paddingBottom: 9,
+    backgroundColor: '#FDFDFD',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  navBtn: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  btnAsset: {
+    width: 26,
+    height: 26,
+    backgroundColor: '#fdfdfd',
   },
-  highlight: {
-    fontWeight: '700',
+  btnTxt: {
+    fontSize: 11,
+    color: '#545454',
+    marginTop: 4,
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  image: {
+    width: 26,
+    height: 26,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#E8E8E8',
+    borderRadius: 25,
+    height: 45,
+    fontSize: 13,
+    marginTop: 54,
+    paddingLeft: 45,
+    paddingRight: 20,
+    backgroundColor: '#FDFDFD',
+  },
+  searchIcon: {
+    position: 'absolute',
+    top: 63,
+    left: 15,
+  },
+  inputContainer: {
+    position: 'relative',
+    //flex: 1,
+  },
+  search: {
+    marginHorizontal: 21,
   },
 });
-
-export default App;

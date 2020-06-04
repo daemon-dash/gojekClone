@@ -7,13 +7,20 @@
  */
 
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.mainContent}>
+        <ScrollView style={styles.mainContent}>
           {/*Search Bar*/}
           <View style={styles.searchBar}>
             <View style={styles.inputContainer}>
@@ -112,7 +119,23 @@ export default class App extends Component {
               </View>
             </View>
           </View>
-        </View>
+          <View style={styles.seperator}></View>
+          {/*news section*/}
+          <View>
+            <View>
+              <Image
+                source={require('./dummy/sepak-bola.jpg')}
+                style={styles.newsImg}
+              />
+            </View>
+            <View>
+              <Text>GO-NEWS</Text>
+              <Text>
+                Salah makes the final goal to lead Liverpool to victory.
+              </Text>
+            </View>
+          </View>
+        </ScrollView>
         {/*Bottom Nav*/}
         <View style={styles.bottomNav}>
           <View style={styles.navBtn}>
@@ -275,5 +298,13 @@ const styles = StyleSheet.create({
   serviceBtn: {
     width: '25%',
     alignItems: 'center',
+  },
+  seperator: {
+    height: 17,
+    backgroundColor: '#F2F2f4',
+    marginTop: 20,
+  },
+  newsImg: {
+    height: 200,
   },
 });

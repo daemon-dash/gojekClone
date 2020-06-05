@@ -146,7 +146,62 @@ export default class App extends Component {
               </TouchableOpacity>
             </View>
           </View>
+
+          {/*Internal Information Section */}
+          <View style={styles.connectDiv}>
+            <View style={styles.gojekTag}>
+              <Image source={require('./logo/gojek.png')} style={styles.tag} />
+            </View>
+            <Text style={styles.connectHeader}>Complete your Profile</Text>
+            <View style={styles.connectBody}>
+              <View>
+                <Image source={require('./dummy/facebook-connect.png')} />
+              </View>
+              <View style={styles.connecTxtDiv}>
+                <Text style={styles.connectTitle}>Connect with Facebook</Text>
+                <Text style={styles.connectDesc}>
+                  Login faster without verification code
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>CONNECT</Text>
+            </TouchableOpacity>
+            <View style={styles.connectBBorder}></View>
+          </View>
+
+          {/*Go-Food Banner Section*/}
+          <View style={styles.bannerContainer}>
+            <View style={styles.foodContainer}>
+              <Image
+                source={require('./dummy/food-banner.jpg')}
+                style={styles.newsImg}
+              />
+              <View style={styles.foodOverlay} />
+              <View style={styles.newsImgTag}>
+                <Image
+                  source={require('./logo/white.png')}
+                  style={styles.tag}
+                />
+              </View>
+              <View style={styles.foodBanner}>
+                <View>
+                  <Text style={styles.foodHeading}>Free GO-FOOD Voucher</Text>
+                  <Text style={styles.foodBody}>
+                    Quick, before they run out!
+                  </Text>
+                </View>
+                <View style={{flex: 1, paddingLeft: 12}}>
+                  <TouchableOpacity style={styles.fButton}>
+                    <Text style={styles.fButtonText}>GET VOUCHER</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+            <View style={styles.bottomBorder}></View>
+          </View>
         </ScrollView>
+
         {/*Bottom Nav*/}
         <View style={styles.bottomNav}>
           <View style={styles.navBtn}>
@@ -334,7 +389,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderBottomColor: '#E8E9ED',
     borderBottomWidth: 1,
-    marginBottom: 20,
   },
   newsDescription: {
     fontSize: 14,
@@ -380,5 +434,101 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FDFDFD',
     textAlign: 'center',
+  },
+  bannerContainer: {
+    padding: 16,
+  },
+  foodContainer: {
+    position: 'relative',
+  },
+  foodOverlay: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    backgroundColor: '#000',
+    opacity: 0.18,
+    borderRadius: 6,
+  },
+  foodBanner: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingBottom: 16,
+  },
+  foodHeading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FDFDFD',
+    marginBottom: 8,
+  },
+  foodBody: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: '#FDFDFD',
+  },
+  fButton: {
+    backgroundColor: '#61A756',
+    paddingHorizontal: 12,
+    paddingVertical: 11,
+    alignSelf: 'stretch',
+    borderRadius: 4,
+  },
+  fButtonText: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#FDFDFD',
+    textAlign: 'center',
+  },
+  bottomBorder: {
+    paddingBottom: 16,
+    borderBottomColor: '#E8E9ED',
+    borderBottomWidth: 1,
+    marginBottom: 20,
+  },
+  gojekTag: {
+    height: 15,
+    width: 60,
+    marginLeft: -4,
+  },
+  connectHeader: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#1C1C1C',
+    marginTop: 15,
+    marginBottom: 20,
+  },
+  connectBody: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  },
+  connectTitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#4A4A4A',
+  },
+  connectDesc: {
+    fontSize: 15,
+    fontWeight: 'normal',
+    color: '#4A4A4A',
+    width: '70%',
+  },
+  connecTxtDiv: {
+    marginLeft: 16,
+    flex: 1,
+  },
+  connectBBorder: {
+    paddingBottom: 16,
+    borderBottomColor: '#E8E9ED',
+    borderBottomWidth: 1,
+  },
+  connectDiv: {
+    padding: 16,
+    paddingBottom: 0,
   },
 });

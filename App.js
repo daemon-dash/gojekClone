@@ -200,6 +200,68 @@ export default class App extends Component {
             </View>
             <View style={styles.bottomBorder}></View>
           </View>
+
+          {/*Neearby Section*/}
+          <View>
+            <View style={styles.nearbyDiv}>
+              <Image
+                source={require('./logo/go-food.png')}
+                style={styles.tag}
+              />
+            </View>
+            <View style={styles.nearbyHeader}>
+              <Text style={styles.nearbyTitle}>Nearby Restaurants</Text>
+              <Text style={styles.nearbyButton}>See All</Text>
+            </View>
+            <ScrollView horizontal style={styles.businessList}>
+              <View style={styles.bImgDiv}>
+                <View style={styles.businessImg}>
+                  <Image
+                    source={require('./dummy/go-food-kfc.jpg')}
+                    style={styles.imgCover}
+                  />
+                </View>
+                <Text style={styles.businessName}>In N Out</Text>
+              </View>
+              <View style={styles.bImgDiv}>
+                <View style={styles.businessImg}>
+                  <Image
+                    source={require('./dummy/go-food-gm.jpg')}
+                    style={styles.imgCover}
+                  />
+                </View>
+                <Text style={styles.businessName}>Tacos El Charro</Text>
+              </View>
+              <View style={styles.bImgDiv}>
+                <View style={styles.businessImg}>
+                  <Image
+                    source={require('./dummy/go-food-orins.jpg')}
+                    style={styles.imgCover}
+                  />
+                </View>
+                <Text style={styles.businessName}>No 1. Chinese</Text>
+              </View>
+              <View style={styles.bImgDiv}>
+                <View style={styles.businessImg}>
+                  <Image
+                    source={require('./dummy/go-food-pak-boss.jpg')}
+                    style={styles.imgCover}
+                  />
+                </View>
+                <Text style={styles.businessName}>Pak Boss</Text>
+              </View>
+              <View style={styles.bImgDiv}>
+                <View style={styles.businessImg}>
+                  <Image
+                    source={require('./dummy/go-food-banka.jpg')}
+                    style={styles.imgCover}
+                  />
+                </View>
+                <Text style={styles.businessName}>Banka Me</Text>
+              </View>
+            </ScrollView>
+            <View style={styles.nearbyBorder}></View>
+          </View>
         </ScrollView>
 
         {/*Bottom Nav*/}
@@ -489,7 +551,6 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     borderBottomColor: '#E8E9ED',
     borderBottomWidth: 1,
-    marginBottom: 20,
   },
   gojekTag: {
     height: 15,
@@ -530,5 +591,58 @@ const styles = StyleSheet.create({
   connectDiv: {
     padding: 16,
     paddingBottom: 0,
+  },
+  nearbyTitle: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#1C1C1C',
+  },
+  nearbyButton: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#61A756',
+  },
+  nearbyHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+    paddingHorizontal: 16,
+  },
+  businessName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#1C1C1C',
+    marginTop: 12,
+  },
+  businessImg: {
+    width: 150,
+    height: 150,
+    borderRadius: 10,
+  },
+  imgCover: {
+    width: undefined,
+    height: undefined,
+    resizeMode: 'cover',
+    flex: 1,
+    borderRadius: 4,
+  },
+  businessList: {
+    flexDirection: 'row',
+    marginLeft: 16,
+  },
+  bImgDiv: {
+    marginRight: 16,
+  },
+  nearbyDiv: {
+    height: 15,
+    width: 60,
+    paddingLeft: 16,
+  },
+  nearbyBorder: {
+    paddingBottom: 16,
+    borderBottomColor: '#E8E9ED',
+    borderBottomWidth: 1,
+    marginBottom: 20,
+    marginHorizontal: 16,
   },
 });

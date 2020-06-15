@@ -19,6 +19,10 @@ import {
 
 import GoPayAction from './src/components/molecules/GoPayAction';
 import Service from './src/components/molecules/Service';
+import SearchBar from './src/components/molecules/Search';
+import GoNews from './src/components/molecules/GoNews';
+import GoInfo from './src/components/molecules/InternalInfo';
+import GoBanner from './src/components/molecules/GoBanner';
 
 export default class App extends Component {
   render() {
@@ -26,21 +30,11 @@ export default class App extends Component {
       <View style={styles.container}>
         <ScrollView style={styles.mainContent}>
           {/*Search Bar*/}
-          <View style={styles.searchBar}>
-            <View style={styles.inputContainer}>
-              <TextInput
-                style={styles.input}
-                placeholder="What do you want to eat?"
-              />
-              <Image
-                style={styles.searchIcon}
-                source={require('./src/assets/icon/search.png')}
-              />
-            </View>
-            <View style={styles.promo}>
-              <Image source={require('./src/assets/icon/promo.png')} />
-            </View>
-          </View>
+          <SearchBar
+            icon={require('./src/assets/icon/search.png')}
+            promo={require('./src/assets/icon/promo.png')}
+            placeholder="What do you want to eat?"
+          />
 
           {/*gopay*/}
           <View style={styles.cardContainer}>
@@ -109,90 +103,30 @@ export default class App extends Component {
           </View>
           <View style={styles.seperator}></View>
           {/*news section*/}
-          <View style={styles.newsContainer}>
-            <View style={styles.imgContainer}>
-              <Image
-                source={require('./src/assets/dummy/sepak-bola.jpg')}
-                style={styles.newsImg}
-              />
-              <View style={styles.overlay} />
-              <View style={styles.newsImgTag}>
-                <Image
-                  source={require('./src/assets/logo/white.png')}
-                  style={styles.tag}
-                />
-              </View>
-            </View>
-            <View style={styles.newsBody}>
-              <Text style={styles.newsTitle}>GO-NEWS</Text>
-              <Text style={styles.newsDescription}>
-                Salah makes the final goal to lead Liverpool to victory.
-              </Text>
-              <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>READ</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
+          <GoNews
+            coverImg={require('./src/assets/dummy/sepak-bola.jpg')}
+            tag={require('./src/assets/logo/white.png')}
+            title="GO-NEWS"
+            description="Salah makes the final goal to lead Liverpool to victory."
+            buttonText="READ"
+          />
           {/*Internal Information Section */}
-          <View style={styles.connectDiv}>
-            <View style={styles.gojekTag}>
-              <Image
-                source={require('./src/assets/logo/gojek.png')}
-                style={styles.tag}
-              />
-            </View>
-            <Text style={styles.connectHeader}>Complete your Profile</Text>
-            <View style={styles.connectBody}>
-              <View>
-                <Image
-                  source={require('./src/assets/dummy/facebook-connect.png')}
-                />
-              </View>
-              <View style={styles.connecTxtDiv}>
-                <Text style={styles.connectTitle}>Connect with Facebook</Text>
-                <Text style={styles.connectDesc}>
-                  Login faster without verification code
-                </Text>
-              </View>
-            </View>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>CONNECT</Text>
-            </TouchableOpacity>
-            <View style={styles.connectBBorder}></View>
-          </View>
-
+          <GoInfo
+            tag={require('./src/assets/logo/gojek.png')}
+            social={require('./src/assets/dummy/facebook-connect.png')}
+            title="Connect with Facebook"
+            header="Complete your Profile"
+            desc="Login faster without verification code"
+            buttonText="CONNECT"
+          />
           {/*Go-Food Banner Section*/}
-          <View style={styles.bannerContainer}>
-            <View style={styles.foodContainer}>
-              <Image
-                source={require('./src/assets/dummy/food-banner.jpg')}
-                style={styles.newsImg}
-              />
-              <View style={styles.foodOverlay} />
-              <View style={styles.newsImgTag}>
-                <Image
-                  source={require('./src/assets/logo/white.png')}
-                  style={styles.tag}
-                />
-              </View>
-              <View style={styles.foodBanner}>
-                <View>
-                  <Text style={styles.foodHeading}>Free GO-FOOD Voucher</Text>
-                  <Text style={styles.foodBody}>
-                    Quick, before they run out!
-                  </Text>
-                </View>
-                <View style={{flex: 1, paddingLeft: 12}}>
-                  <TouchableOpacity style={styles.fButton}>
-                    <Text style={styles.fButtonText}>GET VOUCHER</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-            <View style={styles.bottomBorder}></View>
-          </View>
-
+          <GoBanner
+            cover={require('./src/assets/dummy/food-banner.jpg')}
+            tag={require('./src/assets/logo/white.png')}
+            heading="Free GO-FOOD Voucher"
+            body="Quick, before they run out!"
+            buttonText="GET VOUCHER"
+          />
           {/*Neearby Section*/}
           <View>
             <View style={styles.nearbyDiv}>

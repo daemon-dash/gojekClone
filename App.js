@@ -17,6 +17,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import GoPayAction from './src/components/molecules/GoPayAction';
+import Service from './src/components/molecules/Service';
+
 export default class App extends Component {
   render() {
     return (
@@ -31,93 +34,77 @@ export default class App extends Component {
               />
               <Image
                 style={styles.searchIcon}
-                source={require('./icon/search.png')}
+                source={require('./src/assets/icon/search.png')}
               />
             </View>
             <View style={styles.promo}>
-              <Image source={require('./icon/promo.png')} />
+              <Image source={require('./src/assets/icon/promo.png')} />
             </View>
           </View>
 
           {/*gopay*/}
           <View style={styles.cardContainer}>
             <View style={styles.cardHeader}>
-              <Image source={require('./icon/gopay.png')} />
+              <Image source={require('./src/assets/icon/gopay.png')} />
               <Text style={styles.balance}> Rp 50.000</Text>
             </View>
             <View style={styles.cardBody}>
-              <View style={styles.cardActions}>
-                <Image source={require('./icon/pay.png')} />
-                <Text style={styles.actionLabel}>Pay</Text>
-              </View>
-              <View style={styles.cardActions}>
-                <Image source={require('./icon/nearby.png')} />
-                <Text style={styles.actionLabel}>Nearby</Text>
-              </View>
-              <View style={styles.cardActions}>
-                <Image source={require('./icon/topup.png')} />
-                <Text style={styles.actionLabel}>Top Up</Text>
-              </View>
-              <View style={styles.cardActions}>
-                <Image source={require('./icon/more.png')} />
-                <Text style={styles.actionLabel}>More</Text>
-              </View>
+              <GoPayAction
+                title="Pay"
+                src={require('./src/assets/icon/pay.png')}
+              />
+              <GoPayAction
+                title="Nearby"
+                src={require('./src/assets/icon/nearby.png')}
+              />
+              <GoPayAction
+                title="Top Up"
+                src={require('./src/assets/icon/topup.png')}
+              />
+              <GoPayAction
+                title="More"
+                src={require('./src/assets/icon/more.png')}
+              />
             </View>
           </View>
           {/*main feature*/}
 
           <View style={styles.servContainer}>
             <View style={styles.serviceList}>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-ride.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-RIDE</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-car.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-CAR</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-bluebird.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-BLUEBIRD</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-send.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-SEND</Text>
-              </View>
+              <Service
+                label="GO-RIDE"
+                img={require('./src/assets/icon/go-ride.png')}
+              />
+              <Service
+                label="GO-CAR"
+                img={require('./src/assets/icon/go-car.png')}
+              />
+              <Service
+                label="GO-BLUEBIRD"
+                img={require('./src/assets/icon/go-bluebird.png')}
+              />
+              <Service
+                label="GO-SEND"
+                img={require('./src/assets/icon/go-send.png')}
+              />
             </View>
             <View style={styles.serviceList}>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-deals.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-DEALS</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-pulsa.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-PULSA</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-food.png')} />
-                </View>
-                <Text style={styles.serviceLabel}>GO-FOOD</Text>
-              </View>
-              <View style={styles.serviceBtn}>
-                <View style={styles.services}>
-                  <Image source={require('./icon/go-more.png')} />
-                </View>
-                <Text style={styles.serviceLabel}> MORE</Text>
-              </View>
+              <Service
+                label="GO-DEALS"
+                img={require('./src/assets/icon/go-deals.png')}
+              />
+              <Service
+                label="GO-PULSA"
+                img={require('./src/assets/icon/go-pulsa.png')}
+              />
+              <Service
+                label="GO-FOOD"
+                img={require('./src/assets/icon/go-food.png')}
+              />
+              <Service
+                label="MORE"
+                img={require('./src/assets/icon/go-more.png')}
+              />
             </View>
           </View>
           <View style={styles.seperator}></View>
@@ -125,13 +112,13 @@ export default class App extends Component {
           <View style={styles.newsContainer}>
             <View style={styles.imgContainer}>
               <Image
-                source={require('./dummy/sepak-bola.jpg')}
+                source={require('./src/assets/dummy/sepak-bola.jpg')}
                 style={styles.newsImg}
               />
               <View style={styles.overlay} />
               <View style={styles.newsImgTag}>
                 <Image
-                  source={require('./logo/white.png')}
+                  source={require('./src/assets/logo/white.png')}
                   style={styles.tag}
                 />
               </View>
@@ -150,12 +137,17 @@ export default class App extends Component {
           {/*Internal Information Section */}
           <View style={styles.connectDiv}>
             <View style={styles.gojekTag}>
-              <Image source={require('./logo/gojek.png')} style={styles.tag} />
+              <Image
+                source={require('./src/assets/logo/gojek.png')}
+                style={styles.tag}
+              />
             </View>
             <Text style={styles.connectHeader}>Complete your Profile</Text>
             <View style={styles.connectBody}>
               <View>
-                <Image source={require('./dummy/facebook-connect.png')} />
+                <Image
+                  source={require('./src/assets/dummy/facebook-connect.png')}
+                />
               </View>
               <View style={styles.connecTxtDiv}>
                 <Text style={styles.connectTitle}>Connect with Facebook</Text>
@@ -174,13 +166,13 @@ export default class App extends Component {
           <View style={styles.bannerContainer}>
             <View style={styles.foodContainer}>
               <Image
-                source={require('./dummy/food-banner.jpg')}
+                source={require('./src/assets/dummy/food-banner.jpg')}
                 style={styles.newsImg}
               />
               <View style={styles.foodOverlay} />
               <View style={styles.newsImgTag}>
                 <Image
-                  source={require('./logo/white.png')}
+                  source={require('./src/assets/logo/white.png')}
                   style={styles.tag}
                 />
               </View>
@@ -205,7 +197,7 @@ export default class App extends Component {
           <View>
             <View style={styles.nearbyDiv}>
               <Image
-                source={require('./logo/go-food.png')}
+                source={require('./src/assets/logo/go-food.png')}
                 style={styles.tag}
               />
             </View>
@@ -217,7 +209,7 @@ export default class App extends Component {
               <View style={styles.bImgDiv}>
                 <View style={styles.businessImg}>
                   <Image
-                    source={require('./dummy/go-food-kfc.jpg')}
+                    source={require('./src/assets/dummy/go-food-kfc.jpg')}
                     style={styles.imgCover}
                   />
                 </View>
@@ -226,7 +218,7 @@ export default class App extends Component {
               <View style={styles.bImgDiv}>
                 <View style={styles.businessImg}>
                   <Image
-                    source={require('./dummy/go-food-gm.jpg')}
+                    source={require('./src/assets/dummy/go-food-gm.jpg')}
                     style={styles.imgCover}
                   />
                 </View>
@@ -235,7 +227,7 @@ export default class App extends Component {
               <View style={styles.bImgDiv}>
                 <View style={styles.businessImg}>
                   <Image
-                    source={require('./dummy/go-food-orins.jpg')}
+                    source={require('./src/assets/dummy/go-food-orins.jpg')}
                     style={styles.imgCover}
                   />
                 </View>
@@ -244,7 +236,7 @@ export default class App extends Component {
               <View style={styles.bImgDiv}>
                 <View style={styles.businessImg}>
                   <Image
-                    source={require('./dummy/go-food-pak-boss.jpg')}
+                    source={require('./src/assets/dummy/go-food-pak-boss.jpg')}
                     style={styles.imgCover}
                   />
                 </View>
@@ -253,7 +245,7 @@ export default class App extends Component {
               <View style={styles.bImgDiv}>
                 <View style={styles.businessImg}>
                   <Image
-                    source={require('./dummy/go-food-banka.jpg')}
+                    source={require('./src/assets/dummy/go-food-banka.jpg')}
                     style={styles.imgCover}
                   />
                 </View>
@@ -269,26 +261,35 @@ export default class App extends Component {
           <View style={styles.navBtn}>
             <Image
               style={styles.image}
-              source={require('./icon/home-active.png')}
+              source={require('./src/assets/icon/home-active.png')}
             />
             <Text style={styles.btnTxt}>Home</Text>
           </View>
           <View style={styles.navBtn}>
-            <Image style={styles.image} source={require('./icon/order.png')} />
+            <Image
+              style={styles.image}
+              source={require('./src/assets/icon/order.png')}
+            />
             <Text style={styles.btnTxt}>Orders</Text>
           </View>
           <View style={styles.navBtn}>
-            <Image style={styles.image} source={require('./icon/help.png')} />
+            <Image
+              style={styles.image}
+              source={require('./src/assets/icon/help.png')}
+            />
             <Text style={styles.btnTxt}>Help</Text>
           </View>
           <View style={styles.navBtn}>
-            <Image style={styles.image} source={require('./icon/inbox.png')} />
+            <Image
+              style={styles.image}
+              source={require('./src/assets/icon/inbox.png')}
+            />
             <Text style={styles.btnTxt}>Inbox</Text>
           </View>
           <View style={styles.navBtn}>
             <Image
               style={styles.image}
-              source={require('./icon/account.png')}
+              source={require('./src/assets/icon/account.png')}
             />
             <Text style={styles.btnTxt}>Account</Text>
           </View>
@@ -397,15 +398,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FDFDFD',
   },
-  services: {
-    width: 58,
-    height: 58,
-    borderWidth: 1,
-    borderColor: '#E8E8E8',
-    borderRadius: 18,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   servContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -416,16 +408,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     marginBottom: 18,
-  },
-  serviceLabel: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 6,
-  },
-  serviceBtn: {
-    width: '25%',
-    alignItems: 'center',
   },
   seperator: {
     height: 17,

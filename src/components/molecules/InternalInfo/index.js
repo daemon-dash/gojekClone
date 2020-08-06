@@ -21,7 +21,7 @@ const GoInfo = ({tag, social, title, header, desc, buttonText}) => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>{buttonText}</Text>
       </TouchableOpacity>
-      <View style={styles.connectBBorder}></View>
+      <View style={styles.connectBBorder} />
     </View>
   );
 };

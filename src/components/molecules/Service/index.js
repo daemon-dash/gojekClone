@@ -3,27 +3,27 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 
 const Service = ({label, img}) => {
   return (
-    <View style={styles.serviceBtn}>
-      <View style={styles.services}>
+    <View style={styles.container}>
+      <View style={styles.img}>
         <Image source={img} />
       </View>
-      <Text style={styles.serviceLabel}>{label}</Text>
+      <Text style={styles.label}>{label}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  serviceLabel: {
+  label: {
     fontSize: 11,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 6,
   },
-  serviceBtn: {
+  container: {
     width: '25%',
     alignItems: 'center',
   },
-  services: {
+  img: {
     width: 58,
     height: 58,
     borderWidth: 1,

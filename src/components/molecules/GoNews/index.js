@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const GoNews = ({coverImg, tag, title, description, buttonText}) => {
+const GoNews = ({coverImg, tag, title, description, buttonText, onPress}) => {
   return (
     <View style={styles.newsContainer}>
       <View style={styles.imgContainer}>
@@ -14,7 +14,7 @@ const GoNews = ({coverImg, tag, title, description, buttonText}) => {
       <View style={styles.newsBody}>
         <Text style={styles.newsTitle}>{title}</Text>
         <Text style={styles.newsDescription}>{description}</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text style={styles.buttonText}>{buttonText}</Text>
         </TouchableOpacity>
       </View>

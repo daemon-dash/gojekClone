@@ -1,4 +1,4 @@
-import React, {Component} from 'React';
+import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import Service from '../../../components/molecules/Service';
